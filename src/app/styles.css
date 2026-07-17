@@ -1,0 +1,29 @@
+:root { color: #1e2736; background: #f6f4ef; font-family: Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+button { font: inherit; }
+.storefront { width: min(100%, 480px); min-height: 100vh; margin: 0 auto; padding: 28px 24px 48px; background: #fffdf9; }
+.brand { display: flex; align-items: center; gap: 10px; margin-bottom: 64px; font-weight: 750; letter-spacing: -.02em; }
+.brand__mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: #1e2736; color: white; font-family: Georgia, serif; }
+.eyebrow { margin: 0 0 8px; color: #8a5a44; font-size: 13px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+h1 { margin: 0; font: 700 42px/1.04 Georgia, serif; letter-spacing: -.045em; }
+h2 { margin: 0 0 8px; font-size: 17px; }
+p { color: #687180; }
+.cart, .checkout { display: grid; gap: 24px; }
+.product-card { display: grid; grid-template-columns: 82px 1fr; gap: 18px; align-items: center; padding: 16px; border: 1px solid #ebe7de; border-radius: 16px; }
+.product-card__image { display: grid; place-items: center; width: 82px; height: 92px; border-radius: 10px; background: #e7ded1; font-size: 38px; }
+.product-card p { margin: 0 0 12px; font-size: 14px; }
+.cart__total { display: flex; justify-content: space-between; padding-top: 18px; border-top: 1px solid #ebe7de; font-size: 18px; }
+.primary-action { width: 100%; min-height: 58px; border: 0; border-radius: 12px; background: #175cd3; color: white; font-weight: 750; cursor: pointer; box-shadow: 0 6px 12px #175cd326; }
+.primary-action:hover { background: #004eeb; }
+.checkout__intro { margin: 8px 0 0; }
+.payment-card { display: flex; justify-content: space-between; padding: 18px; border: 1px solid #ebe7de; border-radius: 14px; background: #fff; }
+.payment-card__label { color: #687180; }
+.checkout__payment-area { display: grid; gap: 14px; padding-top: 58px; }
+.order-summary { display: grid; grid-template-columns: 1fr auto; gap: 7px; padding: 16px; border-radius: 14px; background: #f5f1eb; color: #4a382e; }
+.order-summary small { grid-column: 1 / -1; color: #7e6c62; }
+.back-link { width: fit-content; border: 0; padding: 0; background: transparent; color: #175cd3; cursor: pointer; }
+.confirmation { display: grid; justify-items: center; gap: 12px; padding-top: 180px; text-align: center; }
+.confirmation h1 { font-size: 38px; }
+.confirmation__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #d1fadf; color: #067647; font-size: 31px; font-weight: 800; }
+@media (min-width: 481px) { .storefront { border-right: 1px solid #ebe7de; border-left: 1px solid #ebe7de; } }
