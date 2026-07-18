@@ -19,7 +19,9 @@ p { color: #687180; }
 .checkout__intro { margin: 8px 0 0; }
 .payment-card { display: flex; justify-content: space-between; padding: 18px; border: 1px solid #ebe7de; border-radius: 14px; background: #fff; }
 .payment-card__label { color: #687180; }
-.checkout__payment-area { display: grid; gap: 14px; padding-top: 58px; }
+.checkout__payment-area { position: relative; display: grid; gap: 14px; padding-top: 58px; }
+.primary-action:disabled { cursor: wait; opacity: .7; }
+.payment-status { margin: -4px 0 0; color: #8a5a44; font-size: 14px; }
 .order-summary { display: grid; grid-template-columns: 1fr auto; gap: 7px; padding: 16px; border-radius: 14px; background: #f5f1eb; color: #4a382e; }
 .order-summary small { grid-column: 1 / -1; color: #7e6c62; }
 .back-link { width: fit-content; border: 0; padding: 0; background: transparent; color: #175cd3; cursor: pointer; }
@@ -27,3 +29,9 @@ p { color: #687180; }
 .confirmation h1 { font-size: 38px; }
 .confirmation__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #d1fadf; color: #067647; font-size: 31px; font-weight: 800; }
 @media (min-width: 481px) { .storefront { border-right: 1px solid #ebe7de; border-left: 1px solid #ebe7de; } }
+
+/* Intentional Reflex monitoring fixture: a small-screen order summary intercepts Pay now. */
+@media (max-width: 480px) {
+  .checkout__payment-area:has(.order-summary--overlay) { display: block; min-height: 150px; }
+  .order-summary--overlay { position: absolute; z-index: 2; right: -1px; bottom: -9px; left: -1px; min-height: 75px; background: #f5f1ebf2; border: 1px solid #d7c6b5; box-shadow: 0 -5px 16px #4a382e28; cursor: default; }
+}
